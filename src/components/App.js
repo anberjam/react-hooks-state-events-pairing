@@ -1,4 +1,7 @@
+import React from "react";
 import video from "../data/video.js";
+import Comments from "./Comments";
+import Description from "./Description";
 
 function App() {
   console.log("Here's your data:", video);
@@ -13,7 +16,15 @@ function App() {
         allowfullscreen
         title="Thinking in React"
       />
+     
+        <Description title={video.title} views={video.views} date={video.createdAt} upvotes={video.upvotes} downvotes={video.downvotes}  />
+      
+        <Comments commentArray = {video.comments}/>
+      
+
+    
     </div>
+
   );
 }
 
